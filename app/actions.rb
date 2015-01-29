@@ -12,23 +12,23 @@ get '/' do
 end
 
 get '/user/new' do
-  "signup chris"
+  erb :'users/new'
 end
 
 get '/login' do
-  "login"
+  erb :login
 end
 
 get '/user/:id' do
-  "user page"
+ 	erb :'users/show'
 end
 
 get '/user/:id/texts/pending' do
-  "pending texts"
+  erb :'texts/pending'
 end
 
 get '/user/:id/texts/archive' do
-  "archived texts"
+  erb :'texts/archive'
 end
 
 post '/user/new' do
