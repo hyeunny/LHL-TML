@@ -1,6 +1,7 @@
 class Text < ActiveRecord::Base
-	
-
+	validates :recipient_phone_number, presence: true 
+	validates :recipient_phone_number, length: { is: 10 }
+	validates :recipient_phone_number, 	
 
 
 
@@ -20,7 +21,7 @@ class Text < ActiveRecord::Base
 		# set the attributes of the Text class to be passed into the 
 		# message.create method
 		message = client.account.messages.create(
-		    :from => "+19027015580",
+		    :from => "+15005550009",
 		    :to => "+19027195640",
 		    :body => "Hey, this is a test message"
 		  )
