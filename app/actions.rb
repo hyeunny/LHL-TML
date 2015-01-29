@@ -2,9 +2,31 @@
 helpers do 
 	def current_user 
 		if session[:user_id]
-			@user = User.find(session[:user_id])
-		end 
-	end 
+		  @user = User.find(session[:user_id])
+    end
+	end
+
+  def new_user
+     @user = User.new(
+    first_name:   params[:first_name],
+    email:        params[:email],
+    password:     params[:password],
+    phone_number: params[:phone_number] 
+    )
+  end
+
+  def login_user
+     @user = User.where(email: params[:email], password: params[:password]).first
+  end
+
+  def new_message
+     @text = Text.new(
+      recipient_phone_number: params[:recipient_phone_number],
+      content:                params[:content],
+      user_id:                params[:id]                  
+      )
+  end 
+>>>>>>> 5db01a1c98c83279ef11bf2c0d1186bcbb4b79d6
 end 
 
 get '/' do
@@ -20,7 +42,8 @@ get '/login' do
 end
 
 get '/user/:id' do
- 	erb :'users/show'
+  current_user
+  erb :'users/show'
 end
 
 get '/user/:id/texts/pending' do
@@ -32,11 +55,33 @@ get '/user/:id/texts/archive' do
 end
 
 post '/user/new' do
+  new_user
+
+  if @user.save!
+    session[:user_id] = @user.id
+    redirect "/user/#{session[:user_id]}"
+  else
+    erb :'users/new'
+  end
   "post request to make new user"
+  
+end
+
+post '/login' do
+  if login_user
+    session[:user_id] = @user.id
+    redirect "/user/#{session[:user_id]}"
+  else
+    erb :login
+  end
 end
 
 post '/user/:id/text/new' do
-  "post request to make new text"
+  new_message
+
+  if @text.save!
+    redirect '/'
+  end
 end
 
 
