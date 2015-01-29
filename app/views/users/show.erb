@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h1 class="text-center">Greetings, <%= @user.first_name %></h1>
+  <br>
+  <p class="text-center">Let's Send Some Messages!</p>
+  <br>
+  <form method="post" action="/user/<%= @user.id %>/text/new">
+    <label>Number To Text:</label>
+    <input type="text" class="form-control" name="recipient_phone_number">
+    <br>
+    <label>Message Content:</label>
+    <textarea id="msg-content" class="form-control msg-content" name="content"></textarea>
+    <br>
+    <label>Delivery Date:</label>
+    <input type="date" class="form-control">
+    <br>
+    <label>Delivery Hour:</label>
+    <input type="time" class="form-control">
+    <br>
+    <input type="submit" class="btn-primary btn btn-lg" value="Fire Away.">
+  </form>
+</div>
+
+<input type="datetime">

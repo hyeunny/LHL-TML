@@ -27,3 +27,7 @@
     margin: 0 10px;
   }
 }
+
+#msg-content {
+  min-height: 150px;
+}
