@@ -1,7 +1,8 @@
 Sinatra
 =============
 
-Brought to you by Lighthouse Labs!
+Brought to you by Lighthouse Labs
+hello 
 
 ## Getting Started
 
