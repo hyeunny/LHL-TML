@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150129005323) do
   create_table "texts", force: true do |t|
     t.string   "recipient_phone_number"
     t.string   "content"
-    t.date     "send_time"
+    t.datetime "send_time"
     t.integer  "user_id"
     t.string   "status"
     t.datetime "created_at"
