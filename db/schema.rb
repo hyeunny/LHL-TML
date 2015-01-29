@@ -10,11 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321144528) do
+ActiveRecord::Schema.define(version: 20150129005323) do
+
+  create_table "texts", force: true do |t|
+    t.string   "recipient_phone_number"
+    t.string   "content"
+    t.date     "send_time"
+    t.integer  "user_id"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
-    t.string "name"
-    t.string "email"
+    t.string   "first_name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
