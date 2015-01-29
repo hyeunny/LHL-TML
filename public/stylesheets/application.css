@@ -1,0 +1,29 @@
+.main-wrapper {
+  margin-top: 80px;
+}
+
+.tml-main {
+  max-width: 80%;
+}
+
+.jumbotron {
+  background-color: #fff;
+}
+
+.center-buttons {
+  text-align: center;
+}
+
+.tml-main-btn {
+  width: 30%;
+  margin: 0 30px;
+  background-color: #DA4F4F;
+  border-color: #DA4F4F;
+}
+
+@media (max-width: 600px) {
+  .tml-main-btn {
+    width: 30%;
+    margin: 0 10px;
+  }
+}
