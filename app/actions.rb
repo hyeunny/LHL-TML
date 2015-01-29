@@ -26,7 +26,6 @@ helpers do
       user_id:                params[:id]                  
       )
   end 
->>>>>>> 5db01a1c98c83279ef11bf2c0d1186bcbb4b79d6
 end 
 
 get '/' do
@@ -78,8 +77,8 @@ end
 
 post '/user/:id/text/new' do
   new_message
-
   if @text.save!
+    @text.send_text(params[:recipient_phone_number], params[:content])
     redirect '/'
   end
 end
