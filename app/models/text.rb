@@ -25,4 +25,11 @@ class Text < ActiveRecord::Base
 		  )
 		message
 	end 
+
+	def self.pending
+		Text.where(status: "pending")
+	end 
+	def self.archive
+		Text.where(status: "sent")
+	end 
 end 

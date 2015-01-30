@@ -47,10 +47,12 @@ get '/user/:id' do
 end
 
 get '/user/:id/texts/pending' do
+  @texts = Text.pending
   erb :'texts/pending'
 end
 
 get '/user/:id/texts/archive' do
+  @texts = Text.archive
   erb :'texts/archive'
 end
 

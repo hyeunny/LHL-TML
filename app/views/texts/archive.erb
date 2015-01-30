@@ -1,2 +1,12 @@
 <h1> Sent Messages </h1>
 
+<% @texts.each do |text| %>
+  <div class="text">
+    	<h4> to: </h4> <%= text.recipient_phone_number %>
+    	<h4> content:</h4> <%= text.content %>
+    	<h4> created at: <h4><%= text.created_at %>
+    	<h4> Scheduled For: </h4> <%= text.send_time %>
+    <br>
+    <hr/>
+  </div>
+<% end %>
