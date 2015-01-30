@@ -7,12 +7,13 @@ helpers do
 	end
 
   def new_user
-     @user = User.new(
-    first_name:   params[:first_name],
-    email:        params[:email],
-    password:     params[:password],
-    phone_number: params[:phone_number] 
+    User.new(
+      first_name:   params[:first_name],
+      email:        params[:email],
+      password:     params[:password],
+      phone_number: params[:phone_number] 
     )
+
   end
 
   def login_user
@@ -20,12 +21,12 @@ helpers do
   end
 
   def new_message
-     @text = Text.new(
+    Text.new(
       recipient_phone_number: params[:recipient_phone_number],
       content:                params[:content],
       user_id:                params[:id],
       send_time:              params[:datetime]
-      )
+    )
   end 
 end 
 
@@ -57,8 +58,7 @@ get '/user/:id/texts/archive' do
 end
 
 post '/user/new' do
-  new_user
-
+  @user = new_user
   if @user.save
     session[:user_id] = @user.id
     redirect "/user/#{session[:user_id]}"
@@ -77,8 +77,8 @@ post '/login' do
 end
 
 post '/user/:id/text/new' do
-  @user = current_user
-  new_message
+  current_user
+  @text = new_message
   if @text.save
     # @text.send_text(params[:recipient_phone_number], params[:content])
     redirect '/user/:id'
