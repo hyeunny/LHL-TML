@@ -7,11 +7,8 @@ require 'active_support/all'
 # Load Sinatra Framework (with AR)
 require 'sinatra'
 require 'sinatra/activerecord'
-<<<<<<< HEAD
 require 'whenever'
 
-=======
->>>>>>> b4ebfc90842a6950a7d03841467577426c0675a3
 require 'pry'
 
 

@@ -21,6 +21,6 @@
 
 set :output, {:standard => 'log/cron.log'}
 
-every 1.minute do
-  rake 'print_stuff'
+every 1.minutes do
+  rake 'db:check'
 end

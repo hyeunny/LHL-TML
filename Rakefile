@@ -21,8 +21,12 @@ task "db:version" do
   puts "Current version: #{ActiveRecord::Migrator.current_version}"
 end
 
-desc 'just a test'
-task "print_stuff" do
-  puts "cron test"
+desc 'Checks db for msgs ready to be sent and sends them'
+task "db:check" do
+  Text.where(["status = ? AND ? <= send_time < ?", "pending", "#{DateTime.now-1.minutes}", "#{DateTime.now+1.minutes}"  ]).each do |text|
+    text.send_text(text.recipient_phone_number, text.content)
+    text.update(status: 'sent')
+  end
 end
+
 

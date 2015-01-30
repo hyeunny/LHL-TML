@@ -96,6 +96,5 @@ DEPENDENCIES
   sinatra-contrib
   sqlite3
   tux
-
-  whenever
   twilio-ruby
+  whenever

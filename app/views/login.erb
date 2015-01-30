@@ -1,5 +1,16 @@
 <h1 class="text-center">Log In</h1>
 
+<% if @user && @user.errors.any? %>
+  <div>
+    <strong>Oops! Try fixing these:</strong>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <form method="post" action="/login">
   <label>Email:</label>
   <input type="text" class="form-control" name="email">
