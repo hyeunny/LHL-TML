@@ -1,18 +1,28 @@
 <h1 class="text-center">Sign Up</h1>
 
+<% if @user && @user.errors.any? %>
+  <div>
+    <strong>Oops! Try fixing these:</strong>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <form method="post" action="/user/new">
   <label>Firstname:</label>
-  <input type="text" class="form-control" name="first_name">
+  <input type="text" class="form-control" name="first_name" value="<%= @user && @user.first_name %>">
   <br>
   <label>Email:</label>
-  <input type="text" class="form-control" name="email">
+  <input type="text" class="form-control" name="email" value=" <%= @user && @user.email %>">
   <br>
   <label>Cell Phone Number:</label>
-  <input type="text" class="form-control" name="phone_number">
+  <input type="text" class="form-control" name="phone_number" value ="<%= @user && @user.phone_number%>">
   <br>
   <label>Password:</label>
   <input type="password" class="form-control" name="password">
   <br>
   <input type="submit" class="btn btn-primary btn-lg" value="Sign Me Up.">
-
 </form>

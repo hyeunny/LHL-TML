@@ -56,14 +56,12 @@ end
 post '/user/new' do
   new_user
 
-  if @user.save!
+  if @user.save
     session[:user_id] = @user.id
     redirect "/user/#{session[:user_id]}"
   else
     erb :'users/new'
-  end
-  "post request to make new user"
-  
+  end  
 end
 
 post '/login' do
@@ -77,8 +75,8 @@ end
 
 post '/user/:id/text/new' do
   new_message
-
   if @text.save!
+    @text.send_text(params[:recipient_phone_number], params[:content])
     redirect '/'
   end
 end
