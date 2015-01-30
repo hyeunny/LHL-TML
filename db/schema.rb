@@ -10,14 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129005323) do
+ActiveRecord::Schema.define(version: 20150130215145) do
+
+  create_table "group_texts", force: true do |t|
+    t.integer  "users_id"
+    t.string   "group_name"
+    t.string   "phone_num"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "texts", force: true do |t|
     t.string   "recipient_phone_number"
     t.string   "content"
     t.datetime "send_time"
     t.integer  "user_id"
-    t.string   "status", default: "pending"
+    t.string   "status",                 default: "pending"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,4 +38,5 @@ ActiveRecord::Schema.define(version: 20150129005323) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
 end
