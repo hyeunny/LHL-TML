@@ -27,7 +27,15 @@ helpers do
       user_id:                params[:id],
       send_time:              params[:datetime]
     )
-  end 
+  end
+
+  def new_group 
+    GroupText.new(
+      phone_num: params[:phone_num], 
+      group_name: params[:group_name],
+      users_id: params[:user_id]
+      )
+  end  
 end 
 
 get '/' do 
@@ -86,6 +94,25 @@ post '/user/:id/text/new' do
     erb :'users/show'
   end
 end
+
+get'/user/:id/group/new' do 
+  current_user
+  erb :'groups/new'
+end 
+
+post '/user/:id/group/new' do 
+  current_user 
+  @group = new_group 
+  if @group.save
+    redirect '/user/:id'
+  else 
+    erb :'users/show'
+  end 
+end 
+
+
+
+
 
 
 
