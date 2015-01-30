@@ -23,7 +23,7 @@ end
 
 desc 'Checks db for msgs ready to be sent and sends them'
 task "db:check" do
-  Text.where(["status = ? AND ? <= send_time < ?", "pending", "#{DateTime.now-1.minutes}", "#{DateTime.now+1.minutes}"  ]).each do |text|
+  Text.where(["status = ? AND send_time <= ?", "pending", DateTime.now ]).each do |text|
     text.send_text(text.recipient_phone_number, text.content)
     text.update(status: 'sent')
   end

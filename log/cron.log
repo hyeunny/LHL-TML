@@ -259,3 +259,63 @@ D, [2015-01-30T04:10:04.892512 #2538] DEBUG -- :   [1m[36mText Load (9.0ms)[0
 D, [2015-01-30T04:11:05.414908 #2615] DEBUG -- :   [1m[36mText Load (8.3ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:10:05+00:00' <= send_time < '2015-01-30T04:12:05+00:00')[0m
 D, [2015-01-30T04:12:05.913297 #2692] DEBUG -- :   [1m[36mText Load (12.8ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:11:05+00:00' <= send_time < '2015-01-30T04:13:05+00:00')[0m
 D, [2015-01-30T04:13:05.702620 #2818] DEBUG -- :   [1m[36mText Load (15.9ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:12:05+00:00' <= send_time < '2015-01-30T04:14:05+00:00')[0m
+D, [2015-01-30T04:14:06.042396 #2901] DEBUG -- :   [1m[36mText Load (8.9ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:13:06+00:00' <= send_time < '2015-01-30T04:15:06+00:00')[0m
+D, [2015-01-30T04:15:04.484074 #2998] DEBUG -- :   [1m[36mText Load (8.9ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:14:04+00:00' <= send_time < '2015-01-30T04:16:04+00:00')[0m
+D, [2015-01-30T04:16:04.962900 #3075] DEBUG -- :   [1m[36mText Load (8.5ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:15:04+00:00' <= send_time < '2015-01-30T04:17:04+00:00')[0m
+D, [2015-01-30T04:17:04.483787 #3155] DEBUG -- :   [1m[36mText Load (9.1ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:16:04+00:00' <= send_time < '2015-01-30T04:18:04+00:00')[0m
+D, [2015-01-30T04:18:04.979671 #3232] DEBUG -- :   [1m[36mText Load (9.1ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:17:04+00:00' <= send_time < '2015-01-30T04:19:04+00:00')[0m
+D, [2015-01-30T04:19:04.706018 #3310] DEBUG -- :   [1m[36mText Load (9.1ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:18:04+00:00' <= send_time < '2015-01-30T04:20:04+00:00')[0m
+D, [2015-01-30T04:20:05.300913 #3387] DEBUG -- :   [1m[36mText Load (8.1ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:19:05+00:00' <= send_time < '2015-01-30T04:21:05+00:00')[0m
+D, [2015-01-30T04:21:04.876241 #3464] DEBUG -- :   [1m[36mText Load (9.0ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND '2015-01-30T04:20:04+00:00' <= send_time < '2015-01-30T04:22:04+00:00')[0m
+D, [2015-01-30T04:22:05.451143 #3541] DEBUG -- :   [1m[36mText Load (8.9ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:22:05+00:00')[0m
+D, [2015-01-30T04:23:05.279588 #3629] DEBUG -- :   [1m[36mText Load (9.0ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:23:05+00:00')[0m
+D, [2015-01-30T04:24:05.184078 #3720] DEBUG -- :   [1m[36mText Load (9.4ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:24:05+00:00')[0m
+D, [2015-01-30T04:25:04.748160 #3810] DEBUG -- :   [1m[36mText Load (8.8ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:25:04+00:00')[0m
+D, [2015-01-30T04:25:05.652258 #3810] DEBUG -- :   [1m[35m (0.0ms)[0m  begin transaction
+D, [2015-01-30T04:25:05.667033 #3810] DEBUG -- :   [1m[36mSQL (8.9ms)[0m  [1mUPDATE "texts" SET "status" = ?, "updated_at" = ? WHERE "texts"."id" = 7[0m  [["status", "sent"], ["updated_at", 2015-01-30 04:25:05 UTC]]
+D, [2015-01-30T04:25:05.672496 #3810] DEBUG -- :   [1m[35m (5.1ms)[0m  commit transaction
+D, [2015-01-30T04:26:05.403222 #3895] DEBUG -- :   [1m[36mText Load (9.5ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:26:05+00:00')[0m
+D, [2015-01-30T04:27:04.956496 #4301] DEBUG -- :   [1m[36mText Load (8.3ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:27:04+00:00')[0m
+D, [2015-01-30T04:28:04.471478 #4414] DEBUG -- :   [1m[36mText Load (8.7ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:28:04+00:00')[0m
+D, [2015-01-30T04:29:04.979907 #4491] DEBUG -- :   [1m[36mText Load (10.9ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:29:04+00:00')[0m
+D, [2015-01-30T04:30:04.454037 #4569] DEBUG -- :   [1m[36mText Load (9.2ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:30:04+00:00')[0m
+D, [2015-01-30T04:31:04.881608 #4646] DEBUG -- :   [1m[36mText Load (8.5ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:31:04+00:00')[0m
+D, [2015-01-30T04:32:05.285673 #4723] DEBUG -- :   [1m[36mText Load (8.7ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:32:05+00:00')[0m
+D, [2015-01-30T04:33:04.672539 #4800] DEBUG -- :   [1m[36mText Load (9.8ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:33:04+00:00')[0m
+D, [2015-01-30T04:34:05.088240 #4877] DEBUG -- :   [1m[36mText Load (8.1ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:34:05+00:00')[0m
+D, [2015-01-30T04:35:04.517079 #4955] DEBUG -- :   [1m[36mText Load (8.0ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:35:04+00:00')[0m
+D, [2015-01-30T04:36:05.286905 #5032] DEBUG -- :   [1m[36mText Load (9.1ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:36:05+00:00')[0m
+D, [2015-01-30T04:37:04.839713 #5118] DEBUG -- :   [1m[36mText Load (8.5ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:37:04+00:00')[0m
+D, [2015-01-30T04:38:04.876522 #5227] DEBUG -- :   [1m[36mText Load (8.9ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:38:04+00:00')[0m
+D, [2015-01-30T04:39:05.541484 #5321] DEBUG -- :   [1m[36mText Load (8.6ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:39:05+00:00')[0m
+D, [2015-01-30T04:39:06.327152 #5321] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2015-01-30T04:39:06.341785 #5321] DEBUG -- :   [1m[36mSQL (10.2ms)[0m  [1mUPDATE "texts" SET "status" = ?, "updated_at" = ? WHERE "texts"."id" = 8[0m  [["status", "sent"], ["updated_at", 2015-01-30 04:39:06 UTC]]
+D, [2015-01-30T04:39:06.346605 #5321] DEBUG -- :   [1m[35m (4.4ms)[0m  commit transaction
+D, [2015-01-30T04:40:04.876501 #5418] DEBUG -- :   [1m[36mText Load (8.7ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:40:04+00:00')[0m
+D, [2015-01-30T04:40:05.836797 #5418] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2015-01-30T04:40:05.854125 #5418] DEBUG -- :   [1m[36mSQL (9.8ms)[0m  [1mUPDATE "texts" SET "status" = ?, "updated_at" = ? WHERE "texts"."id" = 9[0m  [["status", "sent"], ["updated_at", 2015-01-30 04:40:05 UTC]]
+D, [2015-01-30T04:40:05.859330 #5418] DEBUG -- :   [1m[35m (4.8ms)[0m  commit transaction
+D, [2015-01-30T04:41:05.399715 #5498] DEBUG -- :   [1m[36mText Load (9.7ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:41:05+00:00')[0m
+D, [2015-01-30T04:42:04.997762 #5577] DEBUG -- :   [1m[36mText Load (9.2ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30T04:42:04+00:00')[0m
+D, [2015-01-30T04:43:04.939005 #5681] DEBUG -- :   [1m[36mText Load (11.7ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:43:04.921451')[0m
+D, [2015-01-30T04:44:04.499671 #5776] DEBUG -- :   [1m[36mText Load (9.6ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:44:04.483948')[0m
+D, [2015-01-30T04:45:04.953080 #5853] DEBUG -- :   [1m[36mText Load (9.3ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:45:04.937409')[0m
+D, [2015-01-30T04:45:05.892691 #5853] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2015-01-30T04:45:05.913208 #5853] DEBUG -- :   [1m[36mSQL (7.3ms)[0m  [1mUPDATE "texts" SET "status" = ?, "updated_at" = ? WHERE "texts"."id" = 10[0m  [["status", "sent"], ["updated_at", 2015-01-30 04:45:05 UTC]]
+D, [2015-01-30T04:45:05.918466 #5853] DEBUG -- :   [1m[35m (4.8ms)[0m  commit transaction
+D, [2015-01-30T04:46:05.673149 #5938] DEBUG -- :   [1m[36mText Load (8.7ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:46:05.657872')[0m
+D, [2015-01-30T04:47:06.584532 #6026] DEBUG -- :   [1m[36mText Load (9.7ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:47:06.569339')[0m
+D, [2015-01-30T04:48:05.096937 #6103] DEBUG -- :   [1m[36mText Load (9.0ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:48:05.081915')[0m
+D, [2015-01-30T04:49:04.647855 #6180] DEBUG -- :   [1m[36mText Load (12.2ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:49:04.629496')[0m
+D, [2015-01-30T04:50:05.288046 #6258] DEBUG -- :   [1m[36mText Load (10.0ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:50:05.270929')[0m
+D, [2015-01-30T04:50:06.282938 #6258] DEBUG -- :   [1m[35m (0.3ms)[0m  begin transaction
+D, [2015-01-30T04:50:06.293770 #6258] DEBUG -- :   [1m[36mSQL (6.2ms)[0m  [1mUPDATE "texts" SET "status" = ?, "updated_at" = ? WHERE "texts"."id" = 11[0m  [["status", "sent"], ["updated_at", 2015-01-30 04:50:06 UTC]]
+D, [2015-01-30T04:50:06.298687 #6258] DEBUG -- :   [1m[35m (4.5ms)[0m  commit transaction
+D, [2015-01-30T04:51:05.185377 #6337] DEBUG -- :   [1m[36mText Load (8.6ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:51:05.168540')[0m
+D, [2015-01-30T04:52:04.756524 #6414] DEBUG -- :   [1m[36mText Load (8.9ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:52:04.743315')[0m
+D, [2015-01-30T04:53:05.228502 #6491] DEBUG -- :   [1m[36mText Load (8.5ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:53:05.214375')[0m
+D, [2015-01-30T04:54:04.679732 #6568] DEBUG -- :   [1m[36mText Load (9.7ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:54:04.664256')[0m
+D, [2015-01-30T04:55:05.131180 #6646] DEBUG -- :   [1m[36mText Load (10.2ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:55:05.115211')[0m
+D, [2015-01-30T04:56:04.620525 #6723] DEBUG -- :   [1m[36mText Load (9.4ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:56:04.606359')[0m
+D, [2015-01-30T04:57:05.110983 #6800] DEBUG -- :   [1m[36mText Load (9.0ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 04:57:05.096357')[0m
+D, [2015-01-30T07:10:12.400964 #6886] DEBUG -- :   [1m[36mText Load (45.8ms)[0m  [1mSELECT "texts".* FROM "texts" WHERE (status = 'pending' AND send_time <= '2015-01-30 07:10:12.340959')[0m
