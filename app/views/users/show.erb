@@ -1,15 +1,18 @@
 <div class="jumbotron">
+
+  <h1 class="text-center">Hello, <%= @user.first_name %></h1>
+    <br>
+  <div><center>
   <a href ="/user/<%= current_user.id %>/texts/archive">
   <div class="btn-primary btn btn-lg">
     Archived Messages
-  </div></a>
+ </div></a>
 <a href ="/user/<%= current_user.id %>/texts/pending">
   <div class="btn-primary btn btn-lg">
    Pending Messages
   </div></a>
-
-
-  <h1 class="text-center">Greetings, <%= @user.first_name %></h1>
+  </center></div>
+  <br>
   <br>
   <p class="text-center">Let's Send Some Messages!</p>
   <br>
