@@ -14,6 +14,8 @@ gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
 
+gem 'whenever', :require => false
+
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
