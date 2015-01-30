@@ -79,7 +79,7 @@ post '/user/:id/text/new' do
   new_message
   if @text.save
     @text.send_text(params[:recipient_phone_number], params[:content])
-    redirect '/'
+    redirect '/user/:id'
   else 
     erb :'users/show'
   end

@@ -1,9 +1,18 @@
 <div class="jumbotron">
+  <a href ="/user/<%= current_user.id %>/texts/archive">
+  <div class="btn-primary btn btn-lg">
+    Archived Messages
+  </div></a>
+<a href ="/user/<%= current_user.id %>/texts/pending">
+  <div class="btn-primary btn btn-lg">
+   Pending Messages
+  </div></a>
+
+
   <h1 class="text-center">Greetings, <%= @user.first_name %></h1>
   <br>
   <p class="text-center">Let's Send Some Messages!</p>
   <br>
-
   <% if @text && @text.errors.any? %>
     <div>
       <strong>Oops! Try fixing these:</strong>
