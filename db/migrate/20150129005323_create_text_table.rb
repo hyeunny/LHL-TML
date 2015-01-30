@@ -3,9 +3,9 @@ class CreateTextTable < ActiveRecord::Migration
   	create_table :texts do |t|
   		t.string :recipient_phone_number
   		t.string :content
-  		t.date :send_time
+  		t.datetime :send_time
   		t.references :user
-  		t.string :status
+  		t.string :status, default: 'pending'
   		t.timestamps
   	end
   end

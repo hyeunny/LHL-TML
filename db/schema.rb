@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150129005323) do
     t.string   "content"
     t.datetime "send_time"
     t.integer  "user_id"
-    t.string   "status"
+    t.string   "status",                 default: "pending"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
