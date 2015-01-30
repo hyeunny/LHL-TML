@@ -29,8 +29,8 @@ helpers do
   end 
 end 
 
-get '/' do
-  erb :index 
+get '/' do 
+ erb :index 
 end
 
 get '/user/new' do
