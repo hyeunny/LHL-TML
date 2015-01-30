@@ -1,7 +1,8 @@
 
 class Text < ActiveRecord::Base
 	validates :recipient_phone_number, presence: true 
-	validates :recipient_phone_number, length: { is: 10 }	
+	validates :recipient_phone_number, length: { is: 10 }
+	validates :content, presence: true 	
 
 	def send_text(phonenumber, body) 
 			account_sid = "ACa8a4fcd6af4ee24daee4a7f031a0497f"

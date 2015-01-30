@@ -3,21 +3,30 @@
   <br>
   <p class="text-center">Let's Send Some Messages!</p>
   <br>
+
+  <% if @text && @text.errors.any? %>
+    <div>
+      <strong>Oops! Try fixing these:</strong>
+      <ul>
+        <% @text.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <form method="post" action="/user/<%= @user.id %>/text/new">
     <label>Number To Text:</label>
-    <input type="text" class="form-control" name="recipient_phone_number">
+    <input type="text" class="form-control" name="recipient_phone_number" value = "<%= @text && @text.recipient_phone_number%>">
     <br>
     <label>Message Content:</label>
-    <textarea id="msg-content" class="form-control msg-content" name="content"></textarea>
+    <textarea id="msg-content" class="form-control msg-content" name="content" value="<%= @text && @text.content%>"></textarea>
     <br>
     <label>Delivery Date:</label>
-    <input type="date" class="form-control">
+    <input type="datetime-local" class="form-control" name="datetime">
     <br>
-    <label>Delivery Hour:</label>
-    <input type="time" class="form-control">
-    <br>
-    <input type="submit" class="btn-primary btn btn-lg" value="Fire Away.">
+    
+    <input type="submit" class="btn-primary btn btn-lg" value="Fire Away">
+
   </form>
 </div>
-
-<input type="datetime">

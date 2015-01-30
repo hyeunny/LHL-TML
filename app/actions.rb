@@ -23,7 +23,8 @@ helpers do
      @text = Text.new(
       recipient_phone_number: params[:recipient_phone_number],
       content:                params[:content],
-      user_id:                params[:id]                  
+      user_id:                params[:id],
+      send_time:              params[:datetime]
       )
   end 
 end 
@@ -74,10 +75,13 @@ post '/login' do
 end
 
 post '/user/:id/text/new' do
+  @user = current_user
   new_message
-  if @text.save!
+  if @text.save
     @text.send_text(params[:recipient_phone_number], params[:content])
     redirect '/'
+  else 
+    erb :'users/show'
   end
 end
 
