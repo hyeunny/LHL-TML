@@ -26,23 +26,36 @@
     <label>Delivery Date:</label>
     <input type="datetime-local" class="form-control" name="datetime">
     <br>
-    <label>Time Zone:</label>
-    <br>
 
-    <select class="form-control">
-      <option value="ASKT">AKST</option>
-      <option value="PST">PST</option>
-      <option value="MST">MST</option>
-      <option value="CST">CST</option>
-      <option value="EST">EST</option>
-      <option value="AST">AST</option>
-      <option value="NST">NST</option>
-    </select>
+    
+     <label>Time Zone:</label>
+     <br>
+      <select class="selectpicker" name="timezone"> 
+        <option value="AKST" selected="selected">Alaska Standard Time</option>
+        <option value="PST">Pacific Standard Time </option>
+        <option value="MST">Mountain Standard Time</option>
+        <option value= "CST">Central Standard Time</option>
+        <option value= "EST">Eastern Standard Times </option>
+        <option value= "AST">Alantic Standard Time</option>
+        <option value= "NST">Newfoundland Standard Time</option>
+      </select>
+
+    <br>
     <br>
 
     <input type="submit" class="btn-primary btn btn-lg" value="Fire Away">
 
+
   </form>
 
 
+
+  <a href = "/user/<%=@user.id%>/group/new">
+  <h1> add group </h1>
+  </a>
+
+  <a href = "/user/<%=@user.id%>/group/send">
+  <h1> send to  </h1>
+  </a>
+</div>
 
