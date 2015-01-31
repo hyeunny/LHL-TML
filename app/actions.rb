@@ -33,9 +33,20 @@ helpers do
     GroupText.new(
       phone_num: params[:phone_num], 
       group_name: params[:group_name],
-      users_id: params[:user_id]
+      users_id: params[:id]
       )
   end  
+
+  def create_group_texts
+    GroupText.where(group_name: params[:group]).each do |contact| 
+      Text.create(
+        recipient_phone_number: contact.phone_num,
+        content: params[:content],
+        send_time: params[:send_time],
+        user_id: params[:id]
+      )
+    end 
+  end 
 end 
 
 get '/' do 
@@ -110,6 +121,16 @@ post '/user/:id/group/new' do
   end 
 end 
 
+get '/user/:id/group/send' do 
+  current_user
+  erb :'groups/send'
+end 
+
+post '/user/:id/group/send' do 
+  current_user
+  create_group_texts
+  redirect "/user/:id"
+end 
 
 
 

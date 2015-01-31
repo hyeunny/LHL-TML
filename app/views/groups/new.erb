@@ -1,13 +1,11 @@
 <h1> Create a New Group </h1>
 
-  <form method="post" action="/user/<%= @user.id %>/group/new">
-    <label>Number to Add:</label>
-    <input type="text" class="form-control" name="phone_num">
-    <br>
-    <label>Group Name:</label>
-    <input type="text" class="form-control msg-content" name="group_name">
-    <br>
-    <input type="hidden" class="form-control msg-content" name="users_id" value="<%=@user.id%>">
-    <input type="submit" class="btn-primary btn btn-lg" value="Add">
-
-  </form>
+<form method="post" action="/user/<%= @user.id %>/group/new">
+  <label>Number to Add:</label>
+  <input type="text" class="form-control" name="phone_num">
+  <br>
+  <label>Group Name:</label>
+  <input type="text" class="form-control msg-content" name="group_name">
+  <br>
+  <input type="submit" class="btn-primary btn btn-lg" value="Add">
+</form>
