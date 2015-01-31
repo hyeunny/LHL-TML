@@ -22,12 +22,12 @@ require 'active_support/all'
      @user = User.where(email: params[:email], password: params[:password]).first
   end
 
-  def new_message
+  def new_message(converted_time)
     Text.new(
       recipient_phone_number: params[:recipient_phone_number],
       content:                params[:content],
       user_id:                params[:id],
-      send_time:              params[:datetime]
+      send_time:              converted_time
     )
   end
 
@@ -54,10 +54,10 @@ require 'active_support/all'
     when "AST"
       input_time = input_time + 4.hours
     when "NST"
-      input_time = input_time + 3.hours +   30.minutes
+      input_time = input_time + 3.hours + 30.minutes
     end
+    input_time
   end
-
 end 
 
 get '/' do 
@@ -108,8 +108,10 @@ end
 
 post '/user/:id/text/new' do
   current_user
-  @text = new_message
+  converted_time = convert_time_zone(params[:timezone], params[:datetime].to_datetime)
   binding.pry
+  @text = new_message(converted_time)
+
   if @text.save
     # @text.send_text(params[:recipient_phone_number], params[:content])
     redirect '/user/:id'
