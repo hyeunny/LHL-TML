@@ -81,13 +81,16 @@ post '/user/:id/text/new' do
   @text = new_message
   if @text.save
     # @text.send_text(params[:recipient_phone_number], params[:content])
-    redirect '/user/:id'
+    redirect '/user/:id/texts/pending'
   else 
     erb :'users/show'
   end
 end
 
-
+get '/logout' do
+  session[:user_id] = nil
+  redirect '/'
+end
 
 
 

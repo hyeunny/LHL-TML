@@ -33,9 +33,12 @@
         <div id="navbar" class="collapse navbar-collapse navbar-right">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+            <% if session[:user_id] %>
+            <li><a href="/user/<%= session[:user_id] %>">Send Messages</a></li>
+            <li><a href="/user/<%= session[:user_id] %>/texts/pending">View Pending</a></li>
+            <li><a href="/user/<%= session[:user_id] %>/texts/archive">View Archive</a></li>
+            <li><a href="/logout">Log Out</a></li>
+            <% end %>
         </div><!--/.nav-collapse -->
       </div>
   </nav>

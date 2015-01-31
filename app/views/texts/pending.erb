@@ -1,13 +1,11 @@
-<h1> pending texts </h1>
-<div class= "container">
+<h1> Pending Texts </h1>
+<a href="/user/<%= session[:user_id] %>">Send More Messages.</a>
 	<% @texts.each do |text| %>
-	  <div class="col-xs-10">
-	    	<h4> to: </h4> <%= text.recipient_phone_number %>
-	    	<h4> content:</h4> <%= text.content %>
-	    	<h4> created at: <h4><%= text.created_at %>
-	    	<h4> Scheduled For: </h4> <%= text.send_time %>
-	   <br>
-	    <hr/>
+	  <div class="text-index">
+	    	<p> <b>to:</b> <%= text.recipient_phone_number %> </p>
+	    	<p> <b>content:</b> <%= text.content %> </p>
+	    	<p> <b>created at:</b> <%= text.created_at %> </p>
+	    	<p> <b>scheduled for:</b> <%= text.send_time %> </p>
 	  </div>
-</div>
+
 <% end %>
