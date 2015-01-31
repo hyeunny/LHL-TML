@@ -1,0 +1,15 @@
+ <h1> Select a group to send to </h1>
+
+<form method="post" action="/user/<%= @user.id %>/group/send">
+  <label>Group to send to:</label>
+  <input type="text" class="form-control" name="group">
+  <br>
+  <label>Message Content:</label>
+  <textarea id="msg-content" class="form-control msg-content" name="content" ></textarea>
+  <br>
+  <label>Delivery Date:</label>
+  <input type="datetime-local" class="form-control" name="send_time">
+  <br>
+  <input type="hidden" class="form-control" name = "users_id" value = "<%= @user.id %>"
+  <input type="submit" class="btn-primary btn btn-lg" value="Fire Away">
+</form>
