@@ -129,7 +129,7 @@ end
 post '/user/:id/text/new' do
   current_user
   converted_time = convert_time_zone(params[:timezone], params[:datetime].to_datetime)
-  binding.pry
+  # binding.pry
   @text = new_message(converted_time)
 
   if @text.save
