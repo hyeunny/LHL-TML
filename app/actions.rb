@@ -129,7 +129,6 @@ end
 post '/user/:id/text/new' do
   current_user
   converted_time = convert_time_zone(params[:timezone], params[:datetime].to_datetime)
-  binding.pry
   @text = new_message(converted_time)
 
   if @text.save
@@ -166,7 +165,6 @@ post '/user/:id/group/send' do
   current_user
   converted_time = convert_time_zone(params[:timezone], params[:send_time].to_datetime)
   create_group_texts(converted_time)
-  binding.pry
   redirect "/user/:id"
 end 
 
