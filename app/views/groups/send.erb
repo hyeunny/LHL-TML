@@ -2,14 +2,18 @@
 
 <form method="post" action="/user/<%= @user.id %>/group/send">
   <label>Group to send to:</label>
-  <input type="text" class="form-control" name="group">
+  <select class = "chosen-select" data-placeholder="Select your group" name = "group">
+      <% group_names.each do |c| %>
+        <option value = <%= c %>> <%= c %> </option>
+      <% end %>
+  </select>
   <br>
-  <label>Message Content:</label>
+  <label>Message:</label>
   <textarea id="msg-content" class="form-control msg-content" name="content" ></textarea>
   <br>
   <label>Delivery Date:</label>
   <input type="datetime-local" class="form-control" name="send_time">
   <br>
-  <input type="hidden" class="form-control" name = "users_id" value = "<%= @user.id %>"
+  <input type="hidden" class="form-control" name = "users_id" value = "<%= @user.id %>">
   <input type="submit" class="btn-primary btn btn-lg" value="Fire Away">
 </form>

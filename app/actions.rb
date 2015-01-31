@@ -13,7 +13,6 @@ helpers do
       password:     params[:password],
       phone_number: params[:phone_number] 
     )
-
   end
 
   def login_user
@@ -46,6 +45,15 @@ helpers do
         user_id: params[:id]
       )
     end 
+  end 
+
+  def group_names
+    @groups = GroupText.where("users_id = ?", params[:id])
+    names = []
+    @groups.each do |c|
+      names << c.group_name
+    end 
+    names 
   end 
 end 
 
@@ -123,6 +131,7 @@ end
 
 get '/user/:id/group/send' do 
   current_user
+  group_names#.json
   erb :'groups/send'
 end 
 
