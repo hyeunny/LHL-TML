@@ -38,12 +38,12 @@ require 'active_support/all'
       )
   end  
 
-  def create_group_texts
+  def create_group_texts(converted_time)
     GroupText.where(group_name: params[:group]).each do |contact| 
       Text.create(
         recipient_phone_number: contact.phone_num,
         content: params[:content],
-        send_time: params[:send_time],
+        send_time: converted_time,
         user_id: params[:id]
       )
     end 
@@ -164,7 +164,9 @@ end
 
 post '/user/:id/group/send' do 
   current_user
-  create_group_texts
+  converted_time = convert_time_zone(params[:timezone], params[:send_time].to_datetime)
+  create_group_texts(converted_time)
+  binding.pry
   redirect "/user/:id"
 end 
 
