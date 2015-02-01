@@ -1,6 +1,6 @@
-<h1> Pending Texts </h1>
-<a href="/user/<%= session[:user_id] %>">Send More Messages.</a>
-	<% @texts.each do |text| %>
+<h1 class="text-center">Pending text</h1>
+<br>
+	<% @text_pending.each do |text| %>
 	  <div class="text-index">
 	    	<p> <b>to:</b> <%= text.recipient_phone_number %> </p>
 	    	<p> <b>content:</b> <%= text.content %> </p>

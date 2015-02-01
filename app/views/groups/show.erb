@@ -1,0 +1,20 @@
+<h1 class="text-center">Groups</h1>
+<br>
+<p class="text-center">These are the individuals you have in your groups</p>
+<br>
+
+
+<script> 
+$(function(){
+  $('#accordion').accordion();
+});
+</script> 
+ <div id="accordion">
+    <% @groups.each do |group| %>
+      <h3> <%= group.group_name%> </h3>
+      <div>
+       <p><% @groups.find_by(group_name: group.group_name).phone_num %></p>
+      </div>
+         <% end %>
+        </div>
+

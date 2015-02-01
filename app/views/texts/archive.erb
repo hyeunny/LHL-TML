@@ -1,5 +1,6 @@
-<h1> Sent Texts </h1>
-<a href="/user/<%= session[:user_id] %>">Send More Messages.</a>
+<h1 class="text-center">Sent text</h1>
+<br>
+
 <% @texts.each do |text| %>
   <div class="text-index archive">
     	<p> <b>to:</b>  <%= text.recipient_phone_number %></p>

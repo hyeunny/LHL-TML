@@ -42,3 +42,26 @@
 .archive {
   background-color: RGBa(98,242,0,0.39)
 }
+
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  margin:0px;
+  border:none;
+}
+
+.badge {
+
+  background-color:red;
+}
+
+.h1, h1{
+  font-size:63px;
+}
+
+p {
+  margin-bottom: 15px;
+font-size: 21px;
+font-weight: 200;
+}
+
+}

@@ -19,7 +19,9 @@
   <script src="/javascript/application.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <script src="/javascript/chosen.jquery.min.js"></script>
-
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
   <title></title>
 </head>
 <body>
@@ -38,10 +40,42 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
             <% if session[:user_id] %>
-            <li><a href="/user/<%= session[:user_id] %>">Send Messages</a></li>
-            <li><a href="/user/<%= session[:user_id] %>/texts/pending">View Pending</a></li>
-            <li><a href="/user/<%= session[:user_id] %>/texts/archive">View Archive</a></li>
-            <li><a href="/logout">Log Out</a></li>
+        
+            <li>
+               <nav class="navbar navbar-inverse navbar-collapse" role="navigation">
+              <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Messages<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="/user/<%= session[:user_id] %>">Send individual messages</a></li>
+                          <li><a href="/user/<%= session[:user_id] %>/group/send">Send group messages</a></li> 
+                          <li><a href="/user/<%= session[:user_id] %>/texts/pending">View Pending <span class="badge badge-collapse"><%= @text_pending && @text_pending.count %></span></a></li>
+                          <li>
+                          <a href="/user/<%= session[:user_id] %>/texts/archive">View Archive</a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+             </nav>
+
+            </li>
+
+            <li>
+            <nav class="navbar navbar-inverse navbar-collapse" role="navigation">
+              <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="/user/<%= session[:user_id] %>/group/show">View Groups</a></li>
+                          <li><a href="/user/<%= session[:user_id] %>/group/new">Add groups</a></li>
+                      </ul>
+                  </li>
+              </ul>
+             </nav>
+              </li>
+
+              <li><a href="/logout">Log Out  </a></li>
+
             <% end %>
         </div><!--/.nav-collapse -->
       </div>

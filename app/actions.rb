@@ -2,6 +2,7 @@
 helpers do 
 require 'date'
 require 'active_support/all'
+
 	def current_user 
 		if session[:user_id]
 		  @user = User.find(session[:user_id])
@@ -93,16 +94,18 @@ get '/login' do
 end
 
 get '/user/:id' do
+  @text_pending = Text.pending
   current_user
   erb :'users/show'
 end
 
 get '/user/:id/texts/pending' do
-  @texts = Text.pending
+  @text_pending = Text.pending
   erb :'texts/pending'
 end
 
 get '/user/:id/texts/archive' do
+  @text_pending = Text.pending
   @texts = Text.archive
   erb :'texts/archive'
 end
@@ -127,6 +130,7 @@ post '/login' do
 end
 
 post '/user/:id/text/new' do
+  @text_pending = Text.pending
   current_user
   converted_time = convert_time_zone(params[:timezone], params[:datetime].to_datetime)
   @text = new_message(converted_time)
@@ -145,12 +149,13 @@ get '/logout' do
 end
 
 get'/user/:id/group/new' do 
+  @text_pending = Text.pending
   current_user
-
   erb :'groups/new'
 end 
 
 post '/user/:id/group/new' do 
+  @text_pending = Text.pending
   current_user 
   @group = new_group 
   if @group.save
@@ -161,12 +166,20 @@ post '/user/:id/group/new' do
 end 
 
 get '/user/:id/group/send' do 
+  @text_pending = Text.pending
   current_user
   group_names#.json
   erb :'groups/send'
 end 
 
+get '/user/:id/group/show' do
+  @text_pending = Text.pending 
+  @groups = GroupText.where("users_id = ?", params[:id])
+  erb :'groups/show'
+end 
+
 post '/user/:id/group/send' do 
+  @text_pending = Text.pending
   current_user
   converted_time = convert_time_zone(params[:timezone], params[:send_time].to_datetime)
   create_group_texts(converted_time)
