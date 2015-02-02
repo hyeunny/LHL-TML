@@ -40,7 +40,8 @@
 }
 
 .archive {
-  background-color: RGBa(98,242,0,0.39)
+  background-color: rgba(0, 139, 255, 0.39);
+
 }
 
 
@@ -58,10 +59,9 @@
   font-size:63px;
 }
 
-p {
+#p {
   margin-bottom: 15px;
 font-size: 21px;
 font-weight: 200;
 }
 
-}

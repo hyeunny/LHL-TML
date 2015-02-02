@@ -56,7 +56,7 @@ require 'active_support/all'
     @groups.each do |c|
       names << c.group_name
     end 
-    names 
+    names
   end 
 
   def convert_time_zone(time_zone, input_time)
@@ -174,7 +174,9 @@ end
 
 get '/user/:id/group/show' do
   @text_pending = Text.pending 
+
   @groups = GroupText.where("users_id = ?", params[:id])
+  @group_names = GroupText.select(:phone_num, :group_name).group(:group_name)
   erb :'groups/show'
 end 
 
