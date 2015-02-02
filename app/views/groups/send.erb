@@ -8,7 +8,7 @@
     <label>Group to send to:</label>
     <select class = "chosen-select form-control" data-placeholder="Select your group" name = "group">
         <% group_names.uniq.each do |c| %>
-          <option value = <%= c %>> <%= c %> </option>
+          <option value = "<%= c %>"> <%= c %> </option>
         <% end %>
     </select>
     <br>

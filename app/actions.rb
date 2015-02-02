@@ -200,7 +200,6 @@ end
 
 get '/user/:id/group/show' do
   @text_pending = Text.pending 
-
   @groups = GroupText.where("users_id = ?", params[:id])
   @group_names = GroupText.select(:phone_num, :group_name).group(:group_name)
   erb :'groups/show'
