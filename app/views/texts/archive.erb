@@ -1,5 +1,8 @@
-<h1 class="text-center">Sent text</h1>
+<h1 class="text-center">Sent Texts</h1>
 <br>
+<% if @texts.empty? %>
+  <h3 class="text-center">You Have No Archived Messages.</h3>
+<% end %>
 
 <% @texts.each do |text| %>
   <div class="text-index archive">
@@ -7,5 +10,11 @@
     	<p> <b>content:</b> <%= text.content %></p>
     	<p> <b>created at:</b> <%= text.created_at %></p>
     	<p> <b>scheduled for:</b> <%= text.send_time %></p>
+
+      <form method="post" action="/user/<%= session[:user_id] %>/texts/<%= text.id %>/archive/delete">
+          <button type="submit" class="burner">
+            <span class="glyphicon glyphicon-fire">Destroy</span>
+          </button>
+        </form>
   </div>
 <% end %>

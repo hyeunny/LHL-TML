@@ -79,17 +79,42 @@ require 'active_support/all'
     input_time
   end
 
+  def delete
+    @text.destroy
+  end 
+
 end 
 
+post '/user/:id/texts/:text_id/pending/delete' do
+  @text = Text.find(params[:text_id])
+  @text.destroy!
+
+  redirect "/user/#{session[:user_id]}/texts/pending"
+end
+
+post '/user/:id/texts/:text_id/archive/delete' do
+  @text = Text.find(params[:text_id])
+  @text.destroy!
+
+  redirect "/user/#{session[:user_id]}/texts/archive"
+end
+
 get '/' do 
- erb :index 
+  @text_pending = Text.pending
+  if current_user
+    redirect "/user/#{session[:user_id]}"
+  else
+    erb :index 
+  end
 end
 
 get '/user/new' do
+  @text_pending = Text.pending
   erb :'users/new'
 end
 
 get '/login' do
+  @text_pending = Text.pending
   erb :login
 end
 
@@ -143,6 +168,7 @@ post '/user/:id/text/new' do
 end
 
 
+
 get '/logout' do
   session[:user_id] = nil
   redirect '/'
@@ -159,7 +185,7 @@ post '/user/:id/group/new' do
   current_user 
   @group = new_group 
   if @group.save
-    redirect '/user/:id'
+    redirect "/user/#{session[:user_id]}/group/show"
   else 
     erb :'users/show'
   end 
@@ -168,7 +194,7 @@ end
 get '/user/:id/group/send' do 
   @text_pending = Text.pending
   current_user
-  group_names#.json
+  group_names
   erb :'groups/send'
 end 
 

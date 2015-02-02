@@ -26,4 +26,8 @@ class Text < ActiveRecord::Base
 	def self.archive
 		Text.where(status: "sent")
 	end 
+
+	def delete
+		destroy 
+	end 
 end 

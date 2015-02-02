@@ -1,11 +1,21 @@
-<h1 class="text-center">Pending text</h1>
+<h1 class="text-center">Pending Texts</h1>
 <br>
+  <% if @text_pending.empty? %>
+    <h3 class="text-center">You Have No Pending Messages.</h3>
+  <% end %>
+
 	<% @text_pending.each do |text| %>
 	  <div class="text-index">
 	    	<p> <b>to:</b> <%= text.recipient_phone_number %> </p>
 	    	<p> <b>content:</b> <%= text.content %> </p>
 	    	<p> <b>created at:</b> <%= text.created_at %> </p>
 	    	<p> <b>scheduled for:</b> <%= text.send_time %> </p>
+
+        <form method="post" action="/user/<%= session[:user_id] %>/texts/<%= text.id %>/pending/delete">
+          <button type="submit" class="burner">
+            <span class="glyphicon glyphicon-fire">Destroy</span>
+          </button>
+        </form>
 	  </div>
 
 <% end %>
