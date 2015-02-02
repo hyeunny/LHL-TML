@@ -1,4 +1,7 @@
- <h1> Select a group to send to </h1>
+<h1 class="text-center">Hello, <%= @user.first_name %></h1>
+  <br>
+  <p class="text-center" id="p">Select a group to send to your messages to!</p>
+  <br>
 
 <form method="post" action="/user/<%= @user.id %>/group/send">
   <label>Group to send to:</label>

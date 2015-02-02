@@ -2,7 +2,7 @@
 
   <h1 class="text-center">Hello, <%= @user.first_name %></h1>
   <br>
-  <p class="text-center">Let's Send Some Messages!</p>
+  <p class="text-center" id="p">Let's Send Some Messages!</p>
   <br>
 
   <% if @text && @text.errors.any? %>
@@ -50,12 +50,5 @@
 
 
 
-  <a href = "/user/<%=@user.id%>/group/new">
-  <h1> add group </h1>
-  </a>
-
-  <a href = "/user/<%=@user.id%>/group/send">
-  <h1> send to  </h1>
-  </a>
 </div>
 

@@ -1,0 +1,27 @@
+<h1 class="text-center">Groups</h1>
+<br>
+<p class="text-center" id="p">These are the individuals you have in your groups</p>
+<br>
+
+
+<script> 
+$(function(){
+  $('#accordion').accordion({
+    collapsible: true,
+    autoHeight: true,
+    active: false
+  });
+});
+</script> 
+ <div id="accordion">
+    <% group_names.uniq.each do |name| %>
+      <h3> <%=name %></h3>
+      <div>
+      <% @groups.where(group_name: name).each do |objects|%>
+        <p><%= objects.phone_num %></p>
+      <% end %>
+      </div>
+
+     <% end %>
+  </div>
+
