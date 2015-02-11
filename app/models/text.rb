@@ -6,8 +6,8 @@ class Text < ActiveRecord::Base
 	validates :content, presence: true 	
 
 	def send_text(phonenumber, body) 
-		account_sid = "ACa8a4fcd6af4ee24daee4a7f031a0497f"
-		auth_token = "511b81412170f75d71b0a0ca5d8eaa51"
+		account_sid = :Account_sid
+		auth_token = :Auth_token
 		client = Twilio::REST::Client.new account_sid, auth_token
 		 #need to move these account_sid and the auth_token to a move secure file
 		from = "+1 902-701-5580" # Your Twilio number
