@@ -1,8 +1,7 @@
 Sinatra
 =============
 
-Brought to you by Lighthouse Labs
-hello 
+A scheduled text messaging app built with Sinatra, SQLlite and the TwilioAPI.
 
 ## Getting Started
 
